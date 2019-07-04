@@ -1,13 +1,11 @@
 {
     "env": {
-        "browser": true,
         "node": true,
         "es6": true
     },
     "extends": [
         "airbnb",
-        "prettier",
-        "prettier/react"
+        "prettier"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -21,22 +19,15 @@
     ],
     "rules": {
         "no-console": 0,
-        "react/prefer-stateless-function": 0,
-        "react/jsx-filename-extension": 0,
-        "react/jsx-one-expression-per-line": 0,
         "camelcase": 0,
-        "react/button-has-type": 0,
-        "react/prop-types": 0,
         "import/no-extraneous-dependencies": 0,
-        "react/destructuring-assignment": 0,
         "prettier/prettier": [
             "error",
             {
                 "trailingComma": "es5",
                 "singleQuote": true,
                 "printWidth": 100,
-                "tabWidth": 4,
-                "bracketSpacing": true
+                "tabWidth": 4
             }
         ]
     }
