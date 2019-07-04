@@ -1,0 +1,35 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "no-console": 0,
+        "react/prefer-stateless-function": 0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "camelcase": 0,
+        "react/button-has-type": 0,
+        "react/prop-types": 0,
+        "import/no-extraneous-dependencies": 0,
+        "react/destructuring-assignment": 0,
+        "prettier/prettier": [
+            "error"
+        ]
+    }
+}
