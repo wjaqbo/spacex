@@ -22,7 +22,7 @@ export default function LauchItem({
                         </span>{' '}
                     </h4>
                     <p>
-                        Date: <Moment format="YYYY-MM-DD HH:mm">{launch_date_local}</Moment>{' '}
+                        Date: <Moment format="YYYY-MM-DD HH:mm">{launch_date_local}</Moment>
                     </p>
                 </div>
                 <div className="col-md-3">

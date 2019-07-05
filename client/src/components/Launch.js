@@ -70,7 +70,7 @@ export class Launch extends Component {
                                     <li className="list-group-item">Rocket Name: {rocket_name}</li>
                                     <li className="list-group-item">Rocket Type: {rocket_type}</li>
                                 </ul>
-                                <Link to="/" className="btn btn-secondary mt-3">
+                                <Link to="/launches" className="btn btn-secondary mt-3">
                                     Back
                                 </Link>
                             </div>

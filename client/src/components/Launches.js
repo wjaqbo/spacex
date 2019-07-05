@@ -18,8 +18,8 @@ export class Launches extends Component {
     render() {
         return (
             <Fragment>
-                <div className="card card-header">
-                    <h1 className="display-4">Launches</h1>
+                <div className="card card-header mb-3">
+                    <h1>Launches</h1>
                 </div>
 
                 <Query query={LAUNCHES_QUERY}>
