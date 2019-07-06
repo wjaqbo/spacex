@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function RocketItem({ rocket: { rocket_id, rocket_name, wikipedia } }) {
+export const RocketItem = ({ rocket: { rocket_id, rocket_name } }) => {
     return (
         <div className="card card-body mb-3" key={rocket_id}>
             <div className="row">
@@ -16,4 +16,6 @@ export default function RocketItem({ rocket: { rocket_id, rocket_name, wikipedia
             </div>
         </div>
     );
-}
+};
+
+export default RocketItem;

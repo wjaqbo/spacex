@@ -1,1 +1,4 @@
-
+.pagination {
+    justify-content: center;
+    flex-flow: wrap;
+}

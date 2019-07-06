@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import { Launches } from './components/Launches';
 import { Rockets } from './components/Rockets';
 import { Launch } from './components/Launch';
 import { Rocket } from './components/Rocket';
-import MissionKey from './components/MissionKey';
+import { MissionKey } from './components/MissionKey';
 import { Navigation } from './components/Navigation';
 
 const client = new ApolloClient({

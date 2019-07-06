@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { Link } from 'react-router-dom';
@@ -21,65 +21,61 @@ const LAUNCH_QUERY = gql`
     }
 `;
 
-export class Launch extends Component {
-    render() {
-        let { flight_number } = this.props.match.params;
-        flight_number = parseInt(flight_number, 10);
-        return (
-            <Fragment>
-                <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
-                    {({ loading, error, data }) => {
-                        if (loading) return <h4>Loading...</h4>;
-                        if (error) console.log(error);
+export const Launch = props => {
+    let { flight_number } = props.match.params;
+    flight_number = parseInt(flight_number, 10);
+    return (
+        <Fragment>
+            <Query query={LAUNCH_QUERY} variables={{ flight_number }}>
+                {({ loading, error, data }) => {
+                    if (loading) return <h4>Loading...</h4>;
+                    if (error) console.log(error);
 
-                        const {
-                            mission_name,
-                            launch_year,
-                            launch_success,
-                            rocket: { rocket_id, rocket_name, rocket_type },
-                        } = data.launch;
+                    const {
+                        mission_name,
+                        launch_year,
+                        launch_success,
+                        rocket: { rocket_id, rocket_name, rocket_type },
+                    } = data.launch;
 
-                        return (
-                            <div>
-                                <h1 className="display-4 my-3">
-                                    <span className="text-dark">Misson name: </span>
-                                    {mission_name}
-                                </h1>
-                                <h4 className="mb-3">Launch Details</h4>
-                                <ul className="list-group">
-                                    <li className="list-group-item">
-                                        Flight Number: {flight_number}
-                                    </li>
-                                    <li className="list-group-item">Launch Year: {launch_year}</li>
-                                    <li className="list-group-item">
-                                        Launch Successful:{' '}
-                                        <span
-                                            className={classNames({
-                                                'text-success': launch_success,
-                                                'text-danger': !launch_success,
-                                            })}
-                                        >
-                                            {launch_success ? 'Yes' : 'No'}
-                                        </span>
-                                    </li>
-                                </ul>
+                    return (
+                        <div>
+                            <h1 className="display-4 my-3">
+                                <span className="text-dark">Misson name: </span>
+                                {mission_name}
+                            </h1>
+                            <h4 className="mb-3">Launch Details</h4>
+                            <ul className="list-group">
+                                <li className="list-group-item">Flight Number: {flight_number}</li>
+                                <li className="list-group-item">Launch Year: {launch_year}</li>
+                                <li className="list-group-item">
+                                    Launch Successful:{' '}
+                                    <span
+                                        className={classNames({
+                                            'text-success': launch_success,
+                                            'text-danger': !launch_success,
+                                        })}
+                                    >
+                                        {launch_success ? 'Yes' : 'No'}
+                                    </span>
+                                </li>
+                            </ul>
 
-                                <h4 className="my-3">Rocket Details</h4>
-                                <ul className="list-group">
-                                    <li className="list-group-item">Rocket Id: {rocket_id}</li>
-                                    <li className="list-group-item">Rocket Name: {rocket_name}</li>
-                                    <li className="list-group-item">Rocket Type: {rocket_type}</li>
-                                </ul>
-                                <Link to="/launches" className="btn btn-secondary mt-3">
-                                    Back
-                                </Link>
-                            </div>
-                        );
-                    }}
-                </Query>
-            </Fragment>
-        );
-    }
-}
+                            <h4 className="my-3">Rocket Details</h4>
+                            <ul className="list-group">
+                                <li className="list-group-item">Rocket Id: {rocket_id}</li>
+                                <li className="list-group-item">Rocket Name: {rocket_name}</li>
+                                <li className="list-group-item">Rocket Type: {rocket_type}</li>
+                            </ul>
+                            <Link to="/launches" className="btn btn-secondary mt-3">
+                                Back
+                            </Link>
+                        </div>
+                    );
+                }}
+            </Query>
+        </Fragment>
+    );
+};
 
 export default Launch;

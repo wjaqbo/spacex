@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function MissionKey() {
+export const MissionKey = () => {
     return (
         <div className="my-3" style={{ position: 'sticky', top: 50 }}>
             <p>
@@ -11,4 +11,5 @@ export default function MissionKey() {
             </p>
         </div>
     );
-}
+};
+export default MissionKey;
