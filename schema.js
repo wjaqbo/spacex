@@ -19,6 +19,16 @@ const RocketType = new GraphQLObjectType({
     }),
 });
 
+// Ship Type
+const ShipType = new GraphQLObjectType({
+    name: 'Ship',
+    fields: () => ({
+        ship_id: { type: GraphQLString },
+        ship_name: { type: GraphQLString },
+        image: { type: GraphQLString },
+    }),
+});
+
 // Launch Type
 const LaunchType = new GraphQLObjectType({
     name: 'Lunch',
@@ -68,6 +78,12 @@ const RootQuery = new GraphQLObjectType({
                 return axios
                     .get(`https://api.spacexdata.com/v3/rockets/${args.rocket_id}`)
                     .then(res => res.data);
+            },
+        },
+        ships: {
+            type: new GraphQLList(ShipType),
+            resolve() {
+                return axios.get('https://api.spacexdata.com/v3/ships').then(res => res.data);
             },
         },
     },

@@ -10,6 +10,7 @@ import { Launch } from './components/Launch';
 import { Rocket } from './components/Rocket';
 import { MissionKey } from './components/MissionKey';
 import { Navigation } from './components/Navigation';
+import { Ships } from './components/Ships';
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -42,6 +43,7 @@ const App = () => {
                             <Route exact path="/rockets" component={Rockets} />
                             <Route exact path="/launch/:flight_number" component={Launch} />
                             <Route exact path="/rocket/:rocket_id" component={Rocket} />
+                            <Route exact path="/ships" component={Ships} />
                         </div>
                     </div>
                 </div>
