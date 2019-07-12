@@ -12,7 +12,7 @@ export class Todos extends Component {
 
     componentDidMount() {
         axios
-            .get('http://jsonplaceholder.typicode.com/todos?_limit=5')
+            .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
             .then(res => {
                 this.setState({ todos: res.data });
             })
@@ -40,7 +40,7 @@ export class Todos extends Component {
         this.setState({ loading: true });
         console.log('todo removing...');
         axios
-            .delete(`http://jsonplaceholder.typicode.com/todos/${id}`)
+            .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
             .then(() => {
                 // console.log(res.data);
                 this.setState({
@@ -57,7 +57,7 @@ export class Todos extends Component {
         // console.log(title);
         this.setState({ loading: true });
         axios
-            .post('http://jsonplaceholder.typicode.com/todos', {
+            .post('https://jsonplaceholder.typicode.com/todos', {
                 title,
                 completed: false,
             })
