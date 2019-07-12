@@ -1,0 +1,29 @@
+.header {
+    @media (min-width: 992px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.main-nav {
+    margin-bottom: 30px;
+    @media (min-width: 992px) {
+        margin-bottom: 0;
+    }
+}
+.pagination {
+    justify-content: center;
+    flex-flow: wrap;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+.list-group-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+            

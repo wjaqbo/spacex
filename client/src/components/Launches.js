@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import { LaunchItem } from './LaunchItem';
 import { Pagination } from './Pagination';
+import { MissionKey } from './MissionKey';
 
 const LAUNCHES_QUERY = gql`
     query LaunchesQuery {
@@ -40,6 +41,7 @@ export const Launches = () => {
                 placeholder="Items per page"
                 onChange={event => setItemsPerPage(event.target.value)}
             />
+            <MissionKey />
 
             <Query query={LAUNCHES_QUERY}>
                 {({ loading, error, data }) => {
